@@ -35,7 +35,7 @@ public class LoginMenu {
     private static int max_length = 9;
 
     @FXML
-    protected void onLoginButtonClick() {
+    protected void onLoginButtonClick() throws IOException {
         FileCreate file_create = new FileCreate();
         Boolean checkData = file_create.checkData(username_text_field.getText(), password_field.getText(), 2);
         if (username_text_field.getText().equals("")) {
@@ -43,6 +43,11 @@ public class LoginMenu {
         }if(password_field.getText().equals("")){
             empty_password_error.setText("password is empty");
         } else if (checkData){
+            if (remember_me_check_box.isSelected()){
+                file_create.setRememberMe(true);
+            } else{
+                FileCreate.setRememberMe(false);
+            }
             username_text_field.getScene().getWindow().hide();
             OpenScene("NewsMenuBar");
         } else {

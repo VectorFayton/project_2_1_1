@@ -80,10 +80,22 @@ public class FileCreate{
         }
     }
 
-    public void logic(){
-        if(checkData(username, "", 1)){
-            ResetPassword reset_password = new ResetPassword();
-            reset_password.setLabel("username not exist");
+    public static void setRememberMe(boolean set) throws IOException {
+        FileWriter file_writer = new FileWriter("RememberMePosition.txt");
+        file_writer.write(String.valueOf(set));
+        file_writer.close();
+    }
+    public boolean logic() throws IOException {
+        FileReader file_reader = new FileReader("RememberMePosition.txt");
+        String set = String.valueOf(file_reader.read());
+        System.out.println(set);
+        System.out.println(set);
+        System.out.println("////");
+        System.out.println(Boolean.valueOf(set));
+        if (Boolean.valueOf(set)){
+            return true;
+        } else{
+            return false;
         }
     }
 

@@ -9,11 +9,20 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginMenu.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 822, 518);
-        stage.setTitle("News");
-        stage.setScene(scene);
-        stage.show();
+        FileCreate file_create = new FileCreate();
+        if(file_create.logic()){
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("NewsMenuBar.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 822, 518);
+            stage.setTitle("News");
+            stage.setScene(scene);
+            stage.show();
+        } else {
+            FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginMenu.fxml"));
+            Scene scene = new Scene(fxmlLoader.load(), 822, 518);
+            stage.setTitle("News");
+            stage.setScene(scene);
+            stage.show();
+        }
     }
 
     public static void main(String[] args) {
