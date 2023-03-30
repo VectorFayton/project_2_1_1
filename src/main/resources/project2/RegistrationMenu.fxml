@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="518.0" prefWidth="822.0" style="-fx-background-color: #162a39;" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="project2.RegistrationMenu">
+   <children>
+      <BorderPane prefHeight="518.0" prefWidth="743.0">
+         <right>
+            <AnchorPane prefHeight="518.0" prefWidth="244.0" style="-fx-background-color: #c6d9e9;" BorderPane.alignment="CENTER" />
+         </right>
+         <left>
+            <AnchorPane prefHeight="518.0" prefWidth="247.0" style="-fx-background-color: #c6d9e9;" BorderPane.alignment="CENTER" />
+         </left>
+         <top>
+            <AnchorPane prefHeight="96.0" prefWidth="895.0" style="-fx-background-image: #162a39;" BorderPane.alignment="CENTER">
+               <children>
+                  <Label fx:id="welcomeText" layoutX="14.0" layoutY="25.0" text="Technological Development News" textFill="#fff9f9">
+                     <font>
+                        <Font name="Cooper Black" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </top>
+         <bottom>
+            <AnchorPane prefHeight="37.0" prefWidth="835.0" style="-fx-background-color: #c6d9e9;" BorderPane.alignment="CENTER" />
+         </bottom>
+         <center>
+            <AnchorPane prefHeight="377.0" prefWidth="286.0" style="-fx-background-color: #c6d9e9;" BorderPane.alignment="CENTER">
+               <children>
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#c6d9e9" height="377.0" layoutX="20.0" layoutY="17.0" stroke="TRANSPARENT" strokeType="INSIDE" width="323.0">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </Rectangle>
+                  <TextField fx:id="username_text_field" layoutX="66.0" layoutY="93.0" onKeyTyped="#onUsernameTextFieldAction" prefHeight="25.0" prefWidth="235.0" promptText="Username">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </TextField>
+                  <PasswordField fx:id="new_password_field" layoutX="64.0" layoutY="153.0" onKeyTyped="#onPasswordFieldAction" prefHeight="25.0" prefWidth="235.0" promptText="New Password">
+                     <effect>
+                        <Glow />
+                     </effect>
+                  </PasswordField>
+                  <Label alignment="CENTER" contentDisplay="CENTER" layoutX="65.0" layoutY="28.0" prefHeight="47.0" prefWidth="238.0" text="Registration" textAlignment="CENTER" textFill="#162a39">
+                     <font>
+                        <Font name="Cooper Black" size="33.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="sign_up_button" layoutX="68.0" layoutY="305.0" mnemonicParsing="false" onAction="#onSignUpButtonClick" prefHeight="30.0" prefWidth="235.0" style="-fx-background-color: #162a39;" text="Sign Up" textFill="WHITE" />
+                  <RadioButton fx:id="male_radio_button" layoutX="46.0" layoutY="206.0" mnemonicParsing="false" onAction="#onMaleRadioButtonClick" text="Male" textFill="#162a39" />
+                  <RadioButton fx:id="female_radio_button" layoutX="148.0" layoutY="206.0" mnemonicParsing="false" onAction="#onFemaleRadioButtonClick" text="Female" textFill="#162a39" />
+                  <RadioButton fx:id="other_radio_button" layoutX="254.0" layoutY="206.0" mnemonicParsing="false" onAction="#onOtherRadioButtonClick" text="Other" textFill="#162a39" />
+                  <TextField fx:id="email_text_field" layoutX="67.0" layoutY="254.0" prefHeight="25.0" prefWidth="235.0" promptText="email: exemple@mail.ru" />
+                  <Label layoutX="67.0" layoutY="350.0" text="Already have an account?  " textFill="#162a39" />
+                  <Label fx:id="login_label_button" layoutX="252.0" layoutY="350.0" onMouseClicked="#onLoginLabelButtonClick" text="Login" textFill="#2d5979" />
+                  <Label fx:id="username_error_message_label" layoutX="60.0" layoutY="126.0" prefHeight="18.0" prefWidth="250.0" />
+                  <Label fx:id="password_error_message_label" layoutX="60.0" layoutY="180.0" prefHeight="18.0" prefWidth="250.0" textFill="#162a39" />
+                  <Label fx:id="gender_error_message_label" layoutX="60.0" layoutY="226.0" prefHeight="18.0" prefWidth="250.0" textFill="#162a39" />
+                  <Label fx:id="email_error_message_label" layoutX="67.0" layoutY="279.0" prefHeight="18.0" prefWidth="250.0" textFill="#162a39" />
+               </children>
+            </AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>
