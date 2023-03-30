@@ -34,7 +34,7 @@ public class ResetPassword {
         } else if (password_field.getText().equals(username_text_field.getText()) || username_text_field.equals(password_field.getText())) {
             username_error_message_label.setText("username and password is same");
             password_error_message_label.setText("username and password is same");
-        } else if(!file_create.checkData(username_text_field.getText(), "", 1)) {
+        } else if(!file_create.checkData(username_text_field.getText(), "", 1, "Users")) {
             username_error_message_label.setText("username is not exist");
         } else{
             FileCreate.resetPassword(username_text_field.getText(), password_field.getText(), "Users");

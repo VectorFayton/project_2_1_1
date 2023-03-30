@@ -5,9 +5,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+
 
 public class LoginMenu {
     @FXML
@@ -37,23 +39,36 @@ public class LoginMenu {
     @FXML
     protected void onLoginButtonClick() throws IOException {
         FileCreate file_create = new FileCreate();
-        Boolean checkData = file_create.checkData(username_text_field.getText(), password_field.getText(), 2);
+        NewsMenuBar news_menu_bar = new NewsMenuBar();
+        Boolean check_user_data = file_create.checkData(username_text_field.getText(), password_field.getText(), 2, "Users");
+        Boolean check_admin_data = file_create.checkData(username_text_field.getText(), password_field.getText(), 2, "Admins");
         if (username_text_field.getText().equals("")) {
             empty_username_error.setText("username is empty");
         }if(password_field.getText().equals("")){
             empty_password_error.setText("password is empty");
-        } else if (checkData){
+        } else if (check_user_data || check_admin_data){
             if (remember_me_check_box.isSelected()){
                 file_create.setRememberMe(true);
             } else{
                 FileCreate.setRememberMe(false);
             }
-            username_text_field.getScene().getWindow().hide();
             OpenScene("NewsMenuBar");
+            if (check_admin_data){
+                FXMLLoader loader = new FXMLLoader(LoginMenu.class.getResource("NewsMenuBar.fxml"));
+                loader.load();
+                news_menu_bar = loader.getRoot();
+                news_menu_bar.setUserAvatarLabel("Admin");
+                Parent root = loader.getRoot();
+                Stage stage = new Stage();
+                stage.setScene(new Scene(root));
+                stage.show();
+            } else if (check_user_data){
+                news_menu_bar.setUserAvatarLabel("User");
+            }
+            username_text_field.getScene().getWindow().hide();
         } else {
             OpenScene("LoginPasswordError");
         }
-        System.out.println(checkData);
     }
     @FXML
     protected void onRegisterButtonClicked(){

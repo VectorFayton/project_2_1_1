@@ -46,9 +46,9 @@ public class FileCreate{
         }
         fileOutputStream.close();
     }
-    public boolean checkData(String username, String password, int count){
+    public boolean checkData(String username, String password, int count, String file_name){
         try {
-            ArrayList<String> users = readFile("Users");
+            ArrayList<String> users = readFile(file_name);
             switch (count) {
                 case 1:
                     for (int i = 0; i < users.size(); i += 3) {
@@ -88,9 +88,6 @@ public class FileCreate{
     public boolean logic() throws IOException {
         FileReader file_reader = new FileReader("RememberMePosition.txt");
         String set = String.valueOf(file_reader.read());
-        System.out.println(set);
-        System.out.println(set);
-        System.out.println("////");
         System.out.println(Boolean.valueOf(set));
         if (Boolean.valueOf(set)){
             return true;

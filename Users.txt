@@ -1,12 +1,9 @@
-fallen user
+fallen
 fallen_angel
 fallen@mail.ru
-nurbol user
+nurbol
 123456789
 nurbol@mail.ru
-hfdjksha user
+hfdjksha
 fdsafasd
 fdsafdsafsda
-admin admin
-admin
-admin@mail.ru

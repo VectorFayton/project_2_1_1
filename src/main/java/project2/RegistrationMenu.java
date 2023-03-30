@@ -46,7 +46,7 @@ public class RegistrationMenu {
         } else if(new_password_field.getText().equals(username_text_field.getText()) || username_error_message_label.equals(new_password_field.getText())){
             username_error_message_label.setText("username and password is same");
             password_error_message_label.setText("username and password is same");
-        } else if(file_create.checkData(username_text_field.getText(),"", 1)) {
+        } else if(file_create.checkData(username_text_field.getText(),"", 1, "Users")) {
             username_error_message_label.setText("account with this username has created");
         } else {
             FileCreate.addData(username_text_field.getText(), new_password_field.getText(), email_text_field.getText(), "Users");

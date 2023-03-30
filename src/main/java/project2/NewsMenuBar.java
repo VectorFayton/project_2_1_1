@@ -26,4 +26,12 @@ public class NewsMenuBar {
         LoginMenu.OpenScene("LoginMenu");
     }
 
+    public void setUserAvatarLabel(String status){
+        user_avatar_label.setText(status);
+    }
+
+    public NewsMenuBar() {
+    }
+
+
 }
