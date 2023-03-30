@@ -25,13 +25,13 @@ public class NewsMenuBar {
         user_avatar_label.getScene().getWindow().hide();
         LoginMenu.OpenScene("LoginMenu");
     }
-
-    public void setUserAvatarLabel(String status){
-        user_avatar_label.setText(status);
+    @FXML
+    void initialize(String label) {
+        user_avatar_label.setText(label);
     }
-
     public NewsMenuBar() {
     }
+
 
 
 }

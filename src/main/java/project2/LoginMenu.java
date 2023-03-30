@@ -39,36 +39,35 @@ public class LoginMenu {
     @FXML
     protected void onLoginButtonClick() throws IOException {
         FileCreate file_create = new FileCreate();
-        NewsMenuBar news_menu_bar = new NewsMenuBar();
         Boolean check_user_data = file_create.checkData(username_text_field.getText(), password_field.getText(), 2, "Users");
         Boolean check_admin_data = file_create.checkData(username_text_field.getText(), password_field.getText(), 2, "Admins");
         if (username_text_field.getText().equals("")) {
             empty_username_error.setText("username is empty");
         }if(password_field.getText().equals("")){
             empty_password_error.setText("password is empty");
-        } else if (check_user_data || check_admin_data){
+        } else if (check_user_data){
             if (remember_me_check_box.isSelected()){
                 file_create.setRememberMe(true);
             } else{
                 FileCreate.setRememberMe(false);
             }
+            username_text_field.getScene().getWindow().hide();
             OpenScene("NewsMenuBar");
-            if (check_admin_data){
-                FXMLLoader loader = new FXMLLoader(LoginMenu.class.getResource("NewsMenuBar.fxml"));
-                loader.load();
-                news_menu_bar = loader.getRoot();
-                news_menu_bar.setUserAvatarLabel("Admin");
-                Parent root = loader.getRoot();
-                Stage stage = new Stage();
-                stage.setScene(new Scene(root));
-                stage.show();
-            } else if (check_user_data){
-                news_menu_bar.setUserAvatarLabel("User");
-            }
+        } else if (check_admin_data) {
+            FXMLLoader loader = new FXMLLoader(LoginMenu.class.getResource("NewsMenuBar.fxml"));
+            loader.load();
+            NewsMenuBar news_menu_bar = loader.getController();
+            news_menu_bar.initialize("Admin");
+            Parent root = loader.getRoot();
+            Stage stage = new Stage();
+            stage.setScene(new Scene(root));
+            stage.show();
             username_text_field.getScene().getWindow().hide();
         } else {
             OpenScene("LoginPasswordError");
         }
+        System.out.println("Check Admin: " + check_admin_data);
+        System.out.println("Check User: " + check_admin_data);
     }
     @FXML
     protected void onRegisterButtonClicked(){
