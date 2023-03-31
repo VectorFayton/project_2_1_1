@@ -11,18 +11,6 @@ import java.util.SortedMap;
 import static project2.LoginMenu.OpenScene;
 
 public class Main extends Application {
-//    public void start(Stage stage) throws IOException {
-//        FileCreate file_create = new FileCreate();
-//        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("LoginMenu.fxml"));
-//        System.out.println("Check logic(): " + file_create.logic());
-//        if(file_create.logic()){
-//            fxmlLoader = new FXMLLoader(Main.class.getResource("NewsMenuBar.fxml"));
-//        }
-//        Scene scene = new Scene(fxmlLoader.load(), 822, 518);
-//        stage.setTitle("News");
-//        stage.setScene(scene);
-//        stage.show();
-//    }
     @Override
     public void start(Stage stage) throws IOException {
         FileCreate fileCreate = new FileCreate();
