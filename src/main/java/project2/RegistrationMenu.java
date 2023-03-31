@@ -61,7 +61,6 @@ public class RegistrationMenu {
             username_text_field.getScene().getWindow().hide();
         }
     }
-    //
     @FXML
     protected void onLoginLabelButtonClick(){
         sign_up_button.getScene().getWindow().hide();
