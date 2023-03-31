@@ -16,9 +16,4 @@ public class LoginPasswordError {
     protected void onCloseButtonClick(){
         close_button.getScene().getWindow().hide();
     }
-
-//    public static void errorMessage(String message){
-//        error_message_label.setText(message);
-//    }
-
 }
