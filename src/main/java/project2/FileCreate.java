@@ -56,6 +56,7 @@ public class FileCreate{
                             return true;
                         }
                     }
+                    break;
                 case 2:
                     for (int i = 0; i < users.size(); i += 3) {
                         if (username.contains(users.get(i)) && password.contains(users.get(i + 1))) {
@@ -80,20 +81,42 @@ public class FileCreate{
         }
     }
 
-    public static void setRememberMe(boolean set) throws IOException {
+    public static void setRememberMe(boolean set, String users, String username) throws IOException {
         FileWriter file_writer = new FileWriter("RememberMePosition.txt");
         file_writer.write(String.valueOf(set));
+        file_writer.write("\n");
+        file_writer.write(users + "\n");
+        file_writer.write(username + "\n");
         file_writer.close();
     }
     public boolean logic() throws IOException {
-        FileReader file_reader = new FileReader("RememberMePosition.txt");
-        String set = String.valueOf(file_reader.read());
-        System.out.println(Boolean.valueOf(set));
-        if (Boolean.valueOf(set)){
+        BufferedReader file_reader = new BufferedReader(new FileReader("RememberMePosition.txt"));
+        String line;
+        line = file_reader.readLine();
+        System.out.println(Boolean.valueOf(line));
+        if (Boolean.valueOf(line)){
             return true;
         } else{
             return false;
         }
+    }
+
+    public String getMembers(int choose) throws IOException {
+        BufferedReader reader_file = new BufferedReader(new FileReader("RememberMePosition.txt"));
+        String line;
+        ArrayList<String> users = new ArrayList<>();
+        while ((line = reader_file.readLine()) != null){
+            users.add(line);
+        }
+        switch (choose) {
+            case 1:
+                line = users.get(1);
+                break;
+            default:
+                line = users.get(2);
+                break;
+        }
+        return line;
     }
 
     public String getUsername() {

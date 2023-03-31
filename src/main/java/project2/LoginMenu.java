@@ -47,21 +47,19 @@ public class LoginMenu {
             empty_password_error.setText("password is empty");
         } else if (check_user_data){
             if (remember_me_check_box.isSelected()){
-                file_create.setRememberMe(true);
+                file_create.setRememberMe(true, "User", username_text_field.getText());
             } else{
-                FileCreate.setRememberMe(false);
+                FileCreate.setRememberMe(false, "", "");
             }
+            OpenSceneEditMode("User", username_text_field.getText(), "NewsMenuBar");
             username_text_field.getScene().getWindow().hide();
-            OpenScene("NewsMenuBar");
         } else if (check_admin_data) {
-            FXMLLoader loader = new FXMLLoader(LoginMenu.class.getResource("NewsMenuBar.fxml"));
-            loader.load();
-            NewsMenuBar news_menu_bar = loader.getController();
-            news_menu_bar.initialize("Admin");
-            Parent root = loader.getRoot();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(root));
-            stage.show();
+            if (remember_me_check_box.isSelected()){
+                file_create.setRememberMe(true, "Admin", username_text_field.getText());
+            } else{
+                FileCreate.setRememberMe(false, "", "");
+            }
+            OpenSceneEditMode("Admin", username_text_field.getText(), "NewsMenuBar");
             username_text_field.getScene().getWindow().hide();
         } else {
             OpenScene("LoginPasswordError");
@@ -107,4 +105,16 @@ public class LoginMenu {
         stage.setScene(new Scene(root));
         stage.show();
     }
+
+    public static void OpenSceneEditMode(String user_type, String username, String name_of_fxml_file) throws IOException {
+        FXMLLoader loader = new FXMLLoader(LoginMenu.class.getResource(name_of_fxml_file + ".fxml"));
+        loader.load();
+        NewsMenuBar news_menu_bar = loader.getController();
+        news_menu_bar.initialize(user_type, username);
+        Parent root = loader.getRoot();
+        Stage stage = new Stage();
+        stage.setScene(new Scene(root));
+        stage.show();
+    }
+
 }

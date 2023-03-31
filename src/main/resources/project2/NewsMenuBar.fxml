@@ -23,7 +23,7 @@
             <children>
                 <AnchorPane prefHeight="405.0" prefWidth="228.0" style="-fx-background-color: #4a90c3;">
                     <children>
-                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="33.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="60.0" fitWidth="60.0" layoutX="20.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true">
                             <image>
                                 <Image url="@10094clownface_109962.png" />
                             </image>
@@ -38,15 +38,20 @@
                                 <Image url="@exit_icon-icons.com_48304.png" />
                             </image>
                         </ImageView>
-                        <Label fx:id="user_avatar_label" alignment="CENTER" layoutX="101.0" layoutY="23.0" prefHeight="68.0" prefWidth="116.0" text="User" textFill="WHITE">
+                        <Label fx:id="user_avatar_label" layoutX="97.0" layoutY="52.0" prefHeight="28.0" prefWidth="79.0" text="User" textFill="WHITE">
                             <font>
-                                <Font name="Cooper Black" size="29.0" />
+                                <Font name="Cooper Black" size="14.0" />
                             </font>
                         </Label>
                         <Button fx:id="technology_button" layoutX="56.0" layoutY="169.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Technology" textFill="WHITE" />
                         <Button fx:id="sports_button" layoutX="56.0" layoutY="225.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Sports" textFill="WHITE" />
                         <Button fx:id="business_button" layoutX="56.0" layoutY="281.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Business" textFill="WHITE" />
                         <Button fx:id="economy_button" layoutX="56.0" layoutY="333.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Economy" textFill="WHITE" />
+                  <Label fx:id="username_avatar_label" layoutX="97.0" layoutY="23.0" prefHeight="29.0" prefWidth="125.0" text="123456789" textFill="WHITE">
+                     <font>
+                        <Font name="Cooper Black" size="25.0" />
+                     </font>
+                  </Label>
                     </children></AnchorPane>
                 <GridPane GridPane.columnIndex="1">
                     <columnConstraints>

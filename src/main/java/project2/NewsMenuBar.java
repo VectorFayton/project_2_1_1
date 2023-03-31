@@ -19,6 +19,8 @@ public class NewsMenuBar {
     Button economy_button;
     @FXML
     ImageView exit_image_button;
+    @FXML
+    Label username_avatar_label;
 
     @FXML
     protected void onExitButtonClick(){
@@ -26,8 +28,9 @@ public class NewsMenuBar {
         LoginMenu.OpenScene("LoginMenu");
     }
     @FXML
-    void initialize(String label) {
+    void initialize(String label, String username) {
         user_avatar_label.setText(label);
+        username_avatar_label.setText(username);
     }
     public NewsMenuBar() {
     }

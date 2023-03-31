@@ -1,7 +1,13 @@
 package project2;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class RegistrationMenu {
 
@@ -32,7 +38,7 @@ public class RegistrationMenu {
     private static int max_length = 9;
 
     @FXML
-    protected void onSignUpButtonClick(){
+    protected void onSignUpButtonClick() throws IOException {
         FileCreate file_create = new FileCreate();
         file_create.setUsername(username_text_field.getText());
         if (username_text_field.getText().equals("")) {
@@ -50,8 +56,9 @@ public class RegistrationMenu {
             username_error_message_label.setText("account with this username has created");
         } else {
             FileCreate.addData(username_text_field.getText(), new_password_field.getText(), email_text_field.getText(), "Users");
-            email_text_field.getScene().getWindow().hide();
-            LoginMenu.OpenScene("NewsMenuBar");
+            FileCreate.setRememberMe(false, "", "");
+            LoginMenu.OpenSceneEditMode("User", username_text_field.getText(), "NewsMenuBar");
+            username_text_field.getScene().getWindow().hide();
         }
     }
     //
