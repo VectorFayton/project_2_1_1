@@ -43,10 +43,10 @@
                                 <Font name="Cooper Black" size="14.0" />
                             </font>
                         </Label>
-                        <Button fx:id="technology_button" layoutX="56.0" layoutY="169.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Technology" textFill="WHITE" />
-                        <Button fx:id="sports_button" layoutX="56.0" layoutY="225.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Sports" textFill="WHITE" />
-                        <Button fx:id="business_button" layoutX="56.0" layoutY="281.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Business" textFill="WHITE" />
-                        <Button fx:id="economy_button" layoutX="56.0" layoutY="333.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Economy" textFill="WHITE" />
+                        <Button fx:id="technology_button" layoutX="56.0" layoutY="169.0" mnemonicParsing="false" onAction="#onTechnologyButtonClick" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Technology" textFill="WHITE" />
+                        <Button fx:id="sports_button" layoutX="56.0" layoutY="225.0" mnemonicParsing="false" onAction="#onSpotsButtonClick" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Sports" textFill="WHITE" />
+                        <Button fx:id="business_button" layoutX="56.0" layoutY="281.0" mnemonicParsing="false" onAction="#onBusinessButtonClick" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Business" textFill="WHITE" />
+                        <Button fx:id="economy_button" layoutX="56.0" layoutY="333.0" mnemonicParsing="false" onAction="#onEconomyButtonClick" prefHeight="28.0" prefWidth="116.0" style="-fx-background-color: #162a39;" text="Economy" textFill="WHITE" />
                   <Label fx:id="username_avatar_label" layoutX="97.0" layoutY="23.0" prefHeight="29.0" prefWidth="125.0" text="123456789" textFill="WHITE">
                      <font>
                         <Font name="Cooper Black" size="25.0" />
@@ -63,10 +63,22 @@
                         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <ImageView fitHeight="255.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true" />
-                        <ImageView fitHeight="255.0" fitWidth="297.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                        <ImageView fitHeight="255.0" fitWidth="297.0" layoutX="308.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" />
-                        <ImageView fitHeight="255.0" fitWidth="297.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <ImageView fx:id="first_image" fitHeight="255.0" fitWidth="297.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StartNews/technology.jpg" />
+                     </image></ImageView>
+                        <ImageView fx:id="third_image" fitHeight="255.0" fitWidth="297.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@StartNews/business.jpg" />
+                     </image></ImageView>
+                        <ImageView fx:id="second_image" fitHeight="255.0" fitWidth="297.0" layoutX="308.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1">
+                     <image>
+                        <Image url="@StartNews/sport.jpg" />
+                     </image></ImageView>
+                        <ImageView fx:id="fourth_image" fitHeight="255.0" fitWidth="297.0" layoutX="10.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <image>
+                        <Image url="@StartNews/economy2.jpg" />
+                     </image></ImageView>
                     </children>
                 </GridPane>
             </children>

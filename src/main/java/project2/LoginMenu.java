@@ -91,6 +91,14 @@ public class LoginMenu {
             password_field.setText(limitation);
         }
     }
+    @FXML
+    protected void onForgotPasswordMouseEnter(){
+        forgot_password_button_label.setWrapText(true);
+    }
+    @FXML
+    protected void onForgotPasswordMouseExit(){
+        forgot_password_button_label.setWrapText(true);
+    }
     public static void OpenScene(String name_of_fxml_file){
         FXMLLoader loader_registration_menu = new FXMLLoader(LoginMenu.class.getResource(String.format("%s.fxml", name_of_fxml_file)));
 
